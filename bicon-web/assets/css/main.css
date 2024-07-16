@@ -20,27 +20,96 @@ body {
 header {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 30px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
 }
 .nav-group li, .nav-top-item li {
   list-style-type: none;
   
 }
-.nav-group li a {
-  font-size: 22px !important;
+.nav-group li a,
+.nav-group li .cm-dropdown {
+  font-size: 16px !important;
   font-family: "Source Sans Pro";
+  font-weight: 500;
 }
-.nav-group li a, .nav-top-item li a {
+.nav-group li a,.nav-group li .cm-dropdown, .nav-top-item li a {
   color: var(--white-text);
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 14px;
   font-family: "Source Sans Pro";
 }
-.nav-group li a, .nav-top-item li a:hover {
-  color: var(--white-text) !important;
+.nav-group > li > a:hover,
+.nav-group > li .cm-dropdown:hover,
+.nav-top-item > li > a:hover {
+  color: var(--info-bas-color) !important;
+}
+.nav-group > li > a:focus, 
+.nav-top-item > li > a:focus {
+  color: var(--info-bas-color) !important;
+}
+.nav-group li .cm-dropdown img {
+  filter: invert(100%);
+  width: 14px;
+  height: auto;
+  margin-top: 2px;
+  margin-left: 5px;
 }
 .nav-top-item {
   padding: 0px 15px;
+  transition: all 0.4s ease-in-out;
 }
+/* begin dropdonw  */
+.cm-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+.cm-dropdown:hover .dropdown-item1 {
+  top: 63px;
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-item1 {
+  opacity: 0;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  min-width: 400px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 18px 50px 0px rgba(8, 96, 168, 0.5);
+  transition: 300ms ease;
+  padding-bottom: 10px;
+  border-radius: 0 0 20px 20px;
+  left: 0px;
+  top: 110px;
+}
+.dropdown-item1 a {
+  display: block;
+  font-family: inherit;
+  padding: 12px 20px;
+  line-height: 1.625;
+  font-size: 16px !important;
+  color: rgb(10, 32, 96) !important;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background-color 300ms ease, color 300ms ease;
+  
+}
+.dropdown-item1 a:hover {
+  color: rgb(0, 92, 194) !important;
+}
+.arrowhover1:hover img, 
+  .arrowhover2:hover img{
+  transform: rotate(180deg);
+}
+.cm-dropdown img {
+  transition: 0.4s ease;
+}
+/* end  dropdonwn  */
 .menu-button {
   border: none;
   background: none;
@@ -59,8 +128,66 @@ header {
   color: var(--white-text);
 }
 /* ========== header end ========== */
-
-
+/* begin mobile header  */
+.offcanvas-body > a {
+  display: block;
+  text-decoration: none;
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: rgb(10, 32, 96);
+  padding: 10px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.offcanvas-body > a:hover, .accordion-button {
+  color: rgb(0, 92, 194);
+}
+/* begin accordion customise  */
+.accordion {
+  --bs-accordion-color: rgb(10, 32, 96);
+  --bs-accordion-bg: #fff;
+  --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+  --bs-accordion-border-color: rgba(0, 0, 0, 0.1);
+  --bs-accordion-border-width: 0px;
+  --bs-accordion-border-radius: ;
+  --bs-accordion-inner-border-radius: ;
+  --bs-accordion-btn-padding-x: 0px;
+  --bs-accordion-btn-padding-y: 10px;
+  --bs-accordion-btn-bg: var(--bs-accordion-bg);
+  --bs-accordion-btn-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+  --bs-accordion-btn-icon-width: 1.25rem;
+  --bs-accordion-btn-icon-transform: rotate(-180deg);
+  --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-focus-border-color: ;
+  --bs-accordion-btn-focus-box-shadow: ;
+  --bs-accordion-body-padding-x: ;
+  --bs-accordion-body-padding-y: ;
+  --bs-accordion-active-color: rgb(0, 92, 194);
+  --bs-accordion-active-bg: ;
+}
+.accordion-button {
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  color: rgb(10, 32, 96);
+}
+.accordion-body > a {
+  display: block;
+  text-decoration: none;
+  font-family: Source Sans Pro;
+  font-size: 16px;
+  color: rgb(10, 32, 96);
+  padding: 7px 0;
+  margin-left: 7px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.accordion-body > a:hover {
+  color: rgb(0, 92, 194);
+}
+/* end accorion customise  */
 /* ========= main content =========== */
 .main-content-container {
   padding-top: 0px;
@@ -427,17 +554,13 @@ background-color: rgba(255, 255, 255, 0.2) ;
 }
 .footer .link a {
   text-decoration: none;
-  font-size: 20px;
-  font-family: "Barlow" serif;
-  color: var(--footer-text-color);
+  font-size: 14px;
+  font-size: normal;
+  color: var(--white-text);
   transition: all 0.3s ease-in-out;
 }
 .footer .link a:hover {
   color: var(--info-bas-color);
-}
-.footer .link span i {
-  font-size: 25px;
-  color: var(--footer-text-color);
 }
 .footer-icon-container {
   display: flex;
@@ -467,13 +590,18 @@ background-color: rgba(255, 255, 255, 0.2) ;
   padding: 7px 0px;
   font-weight: 400;
 }
+.footer-link a:hover {
+  color: var(--info-bas-color);
+}
 .footer-bottom .link a{
  text-decoration: none;
- font-size: 20px;
+ font-size: 14px;
+ font-weight: 500;
  color: var(--footer-text-color);
 }
 .copyright {
-  font-size: 20px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--footer-text-color);
   margin: 0px;
 }
@@ -490,7 +618,7 @@ background-color: rgba(255, 255, 255, 0.2) ;
     left: 5%;
    }
    #banner-section-title-typing-effect {
-    top: 10%;
+    top: 30%;
     left: 5%;
    }
    /* end banner section  */

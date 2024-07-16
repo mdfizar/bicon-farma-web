@@ -15,9 +15,10 @@
   <!-- goole font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap">
 
-
   <!-- fontawosome  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- custom css -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -29,7 +30,7 @@
     <div class="d-none d-xl-block">
       <div class="d-flex w-100 nav-top-item gap-3 justify-content-end ">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Investor Diary</a>
+          <a class="nav-link" aria-current="page" href="#">Investor Diary</a>
         </li><span>|</span>
         <li class="nav-item">
           <a class="nav-link" href="#">Careers</a>
@@ -38,13 +39,13 @@
           <a class="nav-link" href="#">Contact Us</a>
         </li><span>|</span>
         <li class="nav-item">
-          <a class="nav-link">Site For Global</a>
+          <a class="nav-link" href="#">Site For Global</a>
         </li><span>|</span>
         <li class="nav-item">
-          <a class="nav-link">Journals</a>
+          <a class="nav-link" href="#">Journals</a>
         </li><span>|</span>
         <li class="nav-item">
-          <a class="nav-link">Old Website</a>
+          <a class="nav-link" href="#">Old Website</a>
         </li>
       </div>
     </div>
@@ -60,17 +61,50 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
+              <!-- begin dropdown  -->
               <li class="nav-item">
-                <a class="nav-link" href="#">Company</a>
+                <div class="cm-dropdown arrowhover1" href="#">
+                  Company
+                  <img src="assets/img/icon/arrow-down.svg" alt="becon arrow">
+                  <div class="dropdown-item1">
+                    <a href="#">Beacon at Glance</a>
+                    <a href="#">Our Leadership</a>
+                    <a href="#">Our People</a>
+                    <a href="#">Our Responsibility</a>
+                    <a href="#">Sister Concerns</a>
+                  </div>
+                </div>
               </li>
+              <!-- end dropdown  -->
+              <!-- begin dropdown  -->
               <li class="nav-item">
-                <a class="nav-link" href="#">Manufacturing Facilities</a>
+                  <div class="cm-dropdown arrowhover2" href="#">
+                    Manufacturing Facilities
+                    <img src="assets/img/icon/arrow-down.svg" alt="becon arrow">
+                    <div class="dropdown-item1">
+                      <a href="#">Overview</a>
+                      <a href="#">Oncology & Biotech</a>
+                      <a href="#">Oral Solid Dosage</a>
+                      <a href="#">Oral Liquid Dosage</a>
+                      <a href="#">Injectables</a>
+                      <a href="#">Cephalosporins & Penem facilities</a>
+                      <a href="#">Topicals</a>
+                      <a href="#">Research & development</a>
+                      <a href="#">Quality Policy</a>
+                    </div>
+                  </div>
               </li>
+              <!-- end dropdown  -->
               <li class="nav-item">
                 <a class="nav-link" href="#">Products</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Business Operations</a>
+              </li>
+              <li>
+                <button class="search">
+                  <img src="assets/img/icon/search.svg" alt="">
+                </button>
               </li>
             </ul>
           </div>
@@ -78,7 +112,7 @@
           <div class="d-xl-none">
             <div class="d-flex">
               <button class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <img src="assets/img/icon/search.svg" alt="">
               </button>    
               <button class="menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <i class="fa-solid fa-bars"></i>
@@ -86,39 +120,66 @@
             </div> 
             <!-- end tolagge icon  -->
           </div>
+        <!-- begin mobile nave item  -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <a class="nav-link" href="#">
+                <img src="assets/img/mobile-logo.svg" alt="beacon farma logo">
+              </a>
+            </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <a href="#">home</a>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Company
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <a href="#">Beacon at Glance</a>
+                      <a href="#">Our Leadership</a>
+                      <a href="#">Our People</a>
+                      <a href="#">Our Responsibility</a>
+                      <a href="#">Sister Concerns</a>
+                </div>
+              </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Manufacturing Facilities
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      <a href="#">Overview</a>
+                      <a href="#">Oncology &amp; Biotech</a>
+                      <a href="#">Oral Solid Dosage</a>
+                      <a href="#">Oral Liquid Dosage</a>
+                      <a href="#">Injectables</a>
+                      <a href="#">Cephalosporins &amp; Penem facilities</a>
+                      <a href="#">Topicals</a>
+                      <a href="#">Research &amp; development</a>
+                      <a href="#">Quality Policy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#">Product</a>
+            <a href="#">Business Operations</a>
+            <a href="#">Investor Diary</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Site For Global</a>
+            <a href="#">Old Website</a>
           </div>
         </div>
+        <!-- end mobile nav item  -->
       </div>
     </nav>
    </div>
@@ -167,10 +228,10 @@
       <div class="container landmark-secton-content d-flex align-items-center">
         <div class="row align-items-start">
           <div class="col-md-12 col-lg-7">
-            <h2 class="text-center mb-5">Landmarks of Beacon</h2>
+            <h2 class="text-center mb-5"  data-aos="fade-up">Landmarks of Beacon</h2>
             <div>
               <!-- begin row  -->
-              <div class="row">
+              <div class="row" data-aos="fade-up">
                 <!-- begin col  -->
                 <div class="col-md-6">
                 <div class="d-flex gap-3">
@@ -242,7 +303,7 @@
             </div>
           </div>
           <div class="col-md-12 col-lg-5">
-            <h2 class="text-center mb-5">Newsroom</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Newsroom</h2>
             <div class="news-room">
               <div class="top">
                 <div class="bottom"></div>
@@ -348,7 +409,7 @@
     <!-- end landmark section  -->
     <!-- begin beacon brand slider  -->
     <section class="becon-brand-sectoin py-5">
-      <h2 class="text-center mb-5 section-heading">Beacon Brand</h2>
+      <h2 class="text-center mb-5 section-heading" data-aos="fade-up">Beacon Brand</h2>
       <div class="swiper brand-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -458,7 +519,7 @@
     <!-- end brans slider  -->
     <!-- begin new brand slider -->
     <section class="becon-new-brand-sectoin py-5">
-      <h2 class="text-center mb-5 section-heading">Newly Launched Products</h2>
+      <h2 class="text-center mb-5 section-heading" data-aos="fade-up">Newly Launched Products</h2>
       <div class="swiper new-brand-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -568,7 +629,7 @@
     <!-- end new brans slider  -->
     <!-- begin news media slider  -->
     <section class="becon-newsmedia-sectoin py-5">
-      <h2 class="text-center mb-5 section-heading">News Media</h2>
+      <h2 class="text-center mb-5 section-heading" data-aos="fade-up">News Media</h2>
       <div class="swiper news-media-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -671,7 +732,7 @@
   <!-- end main content -->
   <!-- ========== begin footer ========  -->
   <footer class="py-5 footer">
-    <div class="container py-5">
+    <div class="container pb-5">
       <!-- begin row  -->
       <div class="row">
         <!--begin first col  -->
@@ -684,11 +745,15 @@
               BEACON Business Centre 9/B/2, Toyenbee Circular Road, Motijheel, Dhaka-1223, Bangladesh                
             </p>
             <div class="d-flex gap-4 link align-items-center">
-              <span><i style="font-size: 30px;" class="fa-solid fa-mobile"></i></span>
+              <span>
+                <img src="assets/img/icon/phone-icon.svg" alt="beacon phone icon">
+              </span>
               <a href="#">+88012294543</a>
             </div>
             <div class="d-flex gap-4 link align-items-center">
-              <span><i class="fa-solid fa-envelope"></i></span>
+              <span>
+                <img src="assets/img/icon/email-icon.svg" alt="beacon email icon">
+              </span>
               <a href="#">info@gmail.com</a>
             </div>
             <div class="footer-icon-container my-3">
@@ -725,7 +790,7 @@
       <!-- end row  -->
     </div>
     <hr style="color: var(--footer-text-color);">
-    <div class="container footer-bottom">
+    <div class="container footer-bottom pt-3">
       <div class="row">
         <div class="col-12 col-md-8">
           <p class="copyright">
@@ -733,7 +798,7 @@
           </p>
         </div>
         <div class="col-12 col-md-4">
-          <divc class="d-flex justify-content-between link">
+          <divc class="d-flex justify-content-evenly link">
             <a href="#">Privacy policy</a>
             <a href="#">Terms & Conditions</a>
           </div>
@@ -747,6 +812,8 @@
   <!-- swiper cdn  -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- custom js  -->
+  <!-- aos  -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
